@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block title%} Some title  {%endblock%}
+
+{%block content%}
+
+<form action="." method="post"> {%csrf_token%}
+    <h2>Do you want to delete case named " {{obj.case}} " ?</h2>
+    <button type="submit" class="btn btn-dark">Yes</button>
+</form>
+{%endblock%}

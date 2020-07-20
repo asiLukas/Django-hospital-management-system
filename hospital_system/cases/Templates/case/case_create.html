@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{%block title%} nevim {%endblock%}
+{%block content%}
+{% load crispy_forms_tags %}
+<form method="post">   {%csrf_token%}
+    {{form|crispy}}
+
+    <button type="submit" class="btn btn-dark ">Create new case</button>
+
+</form>
+{%endblock%}

@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block title%}Case list{%endblock%}
+{%block content%}
+
+{%for c in obj%}
+<br>
+<a id='list_view' href="{{c.get_absolute_url}}">{{c.case}}</a>
+{%endfor%}
+{%endblock%}

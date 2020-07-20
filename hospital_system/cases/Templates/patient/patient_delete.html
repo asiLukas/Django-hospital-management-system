@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block title%}  {%endblock%}
+
+{%block content%}
+<form method="POST" action="."> {%csrf_token%}
+    <h2>Do you want to remove patient {{obj.first_name}} {{obj.last_name}} from system?</h2>
+
+    <button type="submit" class="btn btn-danger">Remove</button>
+</form>
+{%endblock%}
