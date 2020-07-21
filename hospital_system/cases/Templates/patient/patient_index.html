@@ -1,7 +1,8 @@
 {%extends 'base.html'%}
-{%block title%}{%endblock%}
+{%block title%}Patient detail{%endblock%}
 
 {%block content%}
+
 <div class="index_view">
     <h1>{{obj.first_name}} {{obj.last_name}}</h1>
     <h3>Patient address: {{obj.address}}</h3>
@@ -12,4 +13,5 @@
     <a href="{{obj.id}}/delete/"><button class="btn btn-danger">Delete this case</button></a>
     <a href="{{obj.id}}/update/"><button class="btn btn-dark">Update this case</button></a>
 </div>
+
 {%endblock%}

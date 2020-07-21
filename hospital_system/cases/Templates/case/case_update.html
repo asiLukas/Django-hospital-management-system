@@ -1,7 +1,9 @@
 {%extends 'base.html'%}
-{%block title%} update {%endblock%}
-{%load crispy_forms_tags%}
+{%block title%} Case update {%endblock%}
+
 {%block content%}
+{%load crispy_forms_tags%}
+{%if user.is_staff%}
 
 <form method="post"> {%csrf_token%}
     {{form|crispy}}
@@ -9,4 +11,8 @@
     <button type="submit" class="btn btn-dark">Update</button>
 </form>
 
+{%else%}
+<h2>You are not staff in this system, you can't add, update or remove anything here</h2>
+
+{%endif%}
 {%endblock%}

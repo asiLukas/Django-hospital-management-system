@@ -1,10 +1,16 @@
 {%extends 'base.html'%}
-{%block title%} Some title  {%endblock%}
+{%block title%} Delete case  {%endblock%}
 
 {%block content%}
+{%if user.is_staff%}
 
 <form action="." method="post"> {%csrf_token%}
     <h2>Do you want to delete case named " {{obj.case}} " ?</h2>
     <button type="submit" class="btn btn-dark">Yes</button>
 </form>
+
+{%else%}
+<h2>You are not staff in this system, you can't add, update or remove anything here</h2>
+
+{%endif%}
 {%endblock%}

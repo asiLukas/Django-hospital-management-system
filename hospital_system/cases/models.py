@@ -20,8 +20,9 @@ class Patient(models.Model):
 class Case(models.Model):
     case = models.CharField(max_length=120)
     description = models.TextField()
-    date = models.DateField(default=django.utils.timezone.now)
+    created = models.DateField(default=django.utils.timezone.now)
     patient_name = models.ForeignKey(Patient, default=None, on_delete=models.CASCADE)
+    finished = models.CharField(default='On going', max_length=50)
 
     def __str__(self):
         return self.case

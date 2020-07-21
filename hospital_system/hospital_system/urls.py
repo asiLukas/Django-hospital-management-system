@@ -20,4 +20,6 @@ urlpatterns = [
     path('case/', include('cases.urls')),
     path('', include('pages.urls')),
     path('admin/', admin.site.urls),
+    path('login/', include('django.contrib.auth.urls')),
+    path('login/', include('doctors.urls'))
 ]

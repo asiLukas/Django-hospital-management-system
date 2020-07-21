@@ -1,16 +1,19 @@
 {%extends 'base.html'%}
-{%block title%}index{%endblock%}
+{%block title%}Case detail{%endblock%}
 
 {%block content%}
 <div class="index_view">
     <h1>{{obj.case}}</h1>
-    <h3>Created: {{obj.date}}</h3>
+    <h3>Created: {{obj.created}}</h3>
+    <h3>Finished: {{obj.finished}}</h3>
     <h3>Patient: {{obj.patient_name}}</h3>
     <br>
     <h4>{{obj.description}}</h4>
 
 
+
     <a href="{{obj.id}}/delete/"><button class="btn btn-danger">Delete this case</button></a>
     <a href="{{obj.id}}/update/"><button class="btn btn-dark">Update this case</button></a>
 </div>
+
 {%endblock%}

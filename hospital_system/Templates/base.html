@@ -103,6 +103,9 @@
         color: rgb(160, 150, 150);
         font-size: 30px}
 
+        .login_here {
+        font-size: 30px}
+
 
 
 
@@ -113,8 +116,6 @@
 <body>
 {%include 'navbar.html'%}
 
-
-
 <div id="content" name="content" class="main">
     <div class="row justify-content-center">
         <div class="col-8">
@@ -123,17 +124,20 @@
             <br>
             <br>
             <hr class="mt-0 mb-4=">
+            {%if user.is_authenticated%}
             {%block content%}
             replace this
+            {%endblock%}
+            {%else%}
+            <h2>You are not logged in, login <a class="login_here" href="/login/login/">here</a> if you want access to system</h2>
+            <h2>Don't have account yet? Register <a href="/login/register/" class="login_here">here</a></h2>
+            {%endif%}
+            {%block login%}
             {%endblock%}
         </div>
     </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
